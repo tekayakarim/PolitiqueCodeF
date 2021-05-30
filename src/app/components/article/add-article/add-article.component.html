@@ -1,0 +1,144 @@
+<button
+  class="blob-btn-accept"
+  id="login-btn-container"
+  (click)="basicModal.show()"
+>
+  Ajouter une demande <i class="fas fa-plus"></i>
+  <span class="blob-btn-accept__inner">
+    <span class="blob-btn-accept__blobs">
+      <span class="blob-btn-accept__blob"></span>
+      <span class="blob-btn-accept__blob"></span>
+      <span class="blob-btn-accept__blob"></span>
+      <span class="blob-btn-accept__blob"></span>
+      <span class="blob-btn-accept__blob"></span>
+      <span class="blob-btn-accept__blob"></span>
+    </span>
+  </span>
+</button>
+<div
+  mdbModal
+  #basicModal="mdbModal"
+  class="modal fade right"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myBasicModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-md" role="document">
+    <div
+      class="modal-content"
+      style="background-color: transparent; box-shadow: none; border: none;"
+    >
+      <div class="container">
+        <mdb-card>
+          <mdb-card-header
+            style="background-color: #3abeea;"
+            class="text-center text-white"
+          >
+            <h5>
+              <strong>Ajouter une demande</strong>
+            </h5>
+          </mdb-card-header>
+          
+          <mdb-card-body class="px-lg-5 pt-0">
+            <form
+              class="text-center"
+              style="color: #757575;"
+
+            >
+              <textarea
+                required
+                type="text"
+                id="materialContactFormMessage"
+                placeholder="description"
+                class="form-control md-textarea mt-4"
+                mdbInput
+                rows="6"
+                formControlName="description"
+              ></textarea>
+
+              <input
+                placeholder="Date de début de mission"
+                class="form-control mt-4"
+                type="text"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+                formControlName="dataDebut"
+              />
+
+              <input
+                placeholder="Date de fin de mission"
+                class="form-control mt-4"
+                type="text"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+                formControlName="dataFin"
+              />
+
+              <input
+                type="number"
+                name=""
+                id=""
+                class="form-control mt-4"
+                placeholder="Nombre de passagers"
+                formControlName="nbPassergers"
+              />
+
+              <input
+                type="number"
+                name=""
+                id=""
+                class="form-control mt-4"
+                placeholder="Poids"
+                formControlName="poids"
+              />
+              <select
+                class="browser-default custom-select mb-4 mt-4"
+                formControlName="typeMission"
+              >
+                <option value="" disabled selected hidden
+                  >Choisir le type de mission
+                </option>
+                <option value="administratif">Administratif </option>
+                <option value="prive">Privé </option>
+              </select>
+              <button class="blob-btn mr-1 ml-1 mt-4" type="submit">
+                Ajouter <i class="fas fa-plus"></i>
+                <span class="blob-btn__inner">
+                  <span class="blob-btn__blobs">
+                    <span class="blob-btn__blob"></span>
+                    <span class="blob-btn__blob"></span>
+                    <span class="blob-btn__blob"></span>
+                    <span class="blob-btn__blob"></span>
+                    <span class="blob-btn__blob"></span>
+                    <span class="blob-btn__blob"></span>
+                  </span>
+                </span>
+              </button>
+              <button
+                class="blob-btn-danger mr-1 ml-1 mt-4"
+                id="login-btn-container"
+                type="reset"
+                (click)="basicModal.hide()"
+              >
+                Annuler <i class="fa fa-times" aria-hidden="true"></i>
+                <span class="blob-btn-danger__inner">
+                  <span class="blob-btn-danger__blobs">
+                    <span class="blob-btn-danger__blob"></span>
+                    <span class="blob-btn-danger__blob"></span>
+                    <span class="blob-btn-danger__blob"></span>
+                    <span class="blob-btn-danger__blob"></span>
+                    <span class="blob-btn-danger__blob"></span>
+                    <span class="blob-btn-danger__blob"></span>
+                  </span>
+                </span>
+              </button>
+            </form>
+            <!-- Form -->
+          </mdb-card-body>
+        </mdb-card>
+        <!-- Material form register -->
+      </div>
+    </div>
+  </div>
+</div>
