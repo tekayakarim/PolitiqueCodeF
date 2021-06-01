@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ToastrService } from "ngx-toastr";
 @Component({
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor( public toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.toastr.success("not found ", "", {
+      timeOut: 3000,
+       positionClass: 'toast-top-right',
+    
+    });
   }
 
 }
