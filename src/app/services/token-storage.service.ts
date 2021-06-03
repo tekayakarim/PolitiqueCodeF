@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { JwtHelperService } from "@auth0/angular-jwt";
 const TOKEN_KEY = 'auth-token';
 
 
@@ -34,5 +35,14 @@ export class TokenStorageService {
       this.loggedIn.next(true)
     }
       return token;
+    }
+
+    public getUser():Observable<any> {
+      if (this.getToken()!=null) {
+  
+      }
+      let jwtHelper = new JwtHelperService();
+  let user = jwtHelper.decodeToken(this.getToken());
+      return user.id;
     }
 }

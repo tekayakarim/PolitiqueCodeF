@@ -45,7 +45,7 @@ import { AddArticleComponent } from './components/article/add-article/add-articl
     ),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [AuthInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

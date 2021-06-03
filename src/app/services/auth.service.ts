@@ -11,7 +11,7 @@ export class AuthService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  URL = 'http://localhost:8080/api/auth/';
+  URL = 'http://localhost:8000/api/auth/';
   constructor(private http: HttpClient) { }
 
   login(credentials:any): Observable<any> {

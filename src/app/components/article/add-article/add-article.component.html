@@ -3,7 +3,7 @@
   id="login-btn-container"
   (click)="basicModal.show()"
 >
-  Ajouter une demande <i class="fas fa-plus"></i>
+  Ajouter un article <i class="fas fa-plus"></i>
   <span class="blob-btn-accept__inner">
     <span class="blob-btn-accept__blobs">
       <span class="blob-btn-accept__blob"></span>
@@ -32,11 +32,11 @@
       <div class="container">
         <mdb-card>
           <mdb-card-header
-            style="background-color: #3abeea;"
+            style="background-color: #0A001A"
             class="text-center text-white"
           >
             <h5>
-              <strong>Ajouter une demande</strong>
+              <strong>Ajouter un article</strong>
             </h5>
           </mdb-card-header>
           
@@ -44,65 +44,56 @@
             <form
               class="text-center"
               style="color: #757575;"
-
+              [formGroup]="articleForm"
+              (ngSubmit)="onSubmit()"
             >
               <textarea
                 required
                 type="text"
                 id="materialContactFormMessage"
-                placeholder="description"
+                placeholder="text"
                 class="form-control md-textarea mt-4"
                 mdbInput
-                rows="6"
-                formControlName="description"
+                rows="4"
+                formControlName="textArticle"
               ></textarea>
-
-              <input
-                placeholder="Date de début de mission"
-                class="form-control mt-4"
-                type="text"
-                onfocus="(this.type='date')"
-                onblur="(this.type='text')"
-                formControlName="dataDebut"
-              />
-
-              <input
-                placeholder="Date de fin de mission"
-                class="form-control mt-4"
-                type="text"
-                onfocus="(this.type='date')"
-                onblur="(this.type='text')"
-                formControlName="dataFin"
-              />
-
-              <input
-                type="number"
-                name=""
-                id=""
-                class="form-control mt-4"
-                placeholder="Nombre de passagers"
-                formControlName="nbPassergers"
-              />
-
-              <input
-                type="number"
-                name=""
-                id=""
-                class="form-control mt-4"
-                placeholder="Poids"
-                formControlName="poids"
-              />
-              <select
-                class="browser-default custom-select mb-4 mt-4"
-                formControlName="typeMission"
-              >
-                <option value="" disabled selected hidden
-                  >Choisir le type de mission
-                </option>
-                <option value="administratif">Administratif </option>
-                <option value="prive">Privé </option>
+              <select   class="browser-default custom-select mb-4 mt-4" formControlName="typeArticle">
+                <option selected > veuillez choisir le type de l'article</option>
+                <option value="scientifique">scientifique</option>
+                <option value="historique">historique</option>
+                <option value="geographique">geographique</option>
+                <option value="biograhpique">biograhpique</option>
+                <option value="informatique">informatique</option>
               </select>
-              <button class="blob-btn mr-1 ml-1 mt-4" type="submit">
+              <input
+              placeholder="Nom du livre"
+              class="form-control mt-4"
+              type="text"
+              formControlName="nomLivre"
+            />
+              <input
+                placeholder="Date de sortie du livre"
+                class="form-control mt-4"
+                type="text"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+                formControlName="dateSortieLivre"
+              />
+              <input
+              placeholder="Nom de l'auteur"
+              class="form-control mt-4"
+              type="text"
+              formControlName="nomAuteur"
+            />
+
+            <input
+            type="text"
+            class="form-control mt-4"
+            placeholder="image de l'auteur"
+            onfocus="(this.type='file')"
+            formControlName="imageUrlAuteur"
+          />
+          <button class="blob-btn mr-1 ml-1 mt-4" type="submit">
                 Ajouter <i class="fas fa-plus"></i>
                 <span class="blob-btn__inner">
                   <span class="blob-btn__blobs">

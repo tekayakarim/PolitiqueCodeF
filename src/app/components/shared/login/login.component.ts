@@ -61,6 +61,7 @@ console.warn(this.roles);
             this.toastr.success("bienvenue "+data.username, "", {
               timeOut: 3000,
             });
+            this.router.navigateByUrl("acceuil");
           },
           err => {
             this.errorMessage = err.error.message;  
