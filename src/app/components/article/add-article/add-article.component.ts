@@ -48,7 +48,7 @@ console.warn(this.articleForm.value);
           let txt=data.message; 
           if (txt.includes("enregistré")) {
             setTimeout(function () {
-            //  window.location.reload();
+             window.location.reload();
             }, 700);
             console.warn(data);
             this.toastr.success("Ajouté avec succès", "", { timeOut: 3000 });
@@ -60,5 +60,6 @@ console.warn(this.articleForm.value);
         }
       );
     }
+ 
   }
 
