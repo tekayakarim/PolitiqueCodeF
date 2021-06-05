@@ -62,6 +62,7 @@
    .main_content {
     width: 100%;
     margin-left: 200px;
+    box-shadow: #2196f3;
   }
   
    .main_content .header {
@@ -89,6 +90,7 @@
     font-size: 65px;
     font-family: 'Josefin Sans';
     text-align: center;
+    
   }
   
    .main_content .header {
@@ -98,7 +100,8 @@
     border-bottom: 1px solid #e0e4e8;
     font-size: 25px;
     font-family: 'Josefin Sans';
-    text-align: center;
+    
+    margin-left: 30%;
   }
   
   li {
@@ -133,9 +136,13 @@
   }
   
   .txt {
-    position: absolute;
-    left: 590px;
-    text-align: center;
+    
+    margin-left: 10%;
+    border : 2px solid transparent;
+    border-color : black;
+   
+    margin-right: 20%;
+ 
   }
   
   .flech {

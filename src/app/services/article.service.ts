@@ -19,4 +19,7 @@ export class ArticleService {
       user: article.user,
     });
   }
+  getArticles():Observable<any>{
+    return this.http.get(this.URL+"/recupererArticles" );
+  }
 }
