@@ -15,8 +15,17 @@ import { LoginComponent } from './components/shared/login/login.component';
 import { RegisterComponent } from './components/shared/register/register.component';
 import { NavBarComponent } from './components/shared/nav-bar/nav-bar.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 import { AddArticleComponent } from './components/article/add-article/add-article.component';
+import { ArticlePolitiqueComponent } from './components/article/article-politique/article-politique.component';
+import { ArticleJuridiqueComponent } from './components/article/article-juridique/article-juridique.component';
+import { ArticleEconomiqueComponent } from './components/article/article-economique/article-economique.component';
+import { ContactComponent } from './components/contact/contact.component';
+
+
+
+
+
 
 
 
@@ -30,6 +39,13 @@ import { AddArticleComponent } from './components/article/add-article/add-articl
     NavBarComponent,
     NotFoundComponent,
     AddArticleComponent,
+    ArticlePolitiqueComponent,
+    ArticleJuridiqueComponent,
+    ArticleEconomiqueComponent,
+    ContactComponent,
+   
+
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +60,7 @@ import { AddArticleComponent } from './components/article/add-article/add-articl
     }
     ),
     BrowserAnimationsModule,
+    NgxSpinnerModule,
   ],
   providers: [AuthInterceptor],
   bootstrap: [AppComponent]
