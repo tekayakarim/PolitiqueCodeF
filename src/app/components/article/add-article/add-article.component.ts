@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ArticleService } from '../../../services/article.service';
 import { TokenStorageService } from "../../../services/token-storage.service";
 
+
 @Component({
   selector: 'app-add-article',
   templateUrl: './add-article.component.html',
@@ -15,6 +16,9 @@ import { TokenStorageService } from "../../../services/token-storage.service";
 export class AddArticleComponent implements OnInit {
 
   articleForm: FormGroup;
+
+  imageData: string="";
+
   constructor(
   
     public formBuilder: FormBuilder,
@@ -31,6 +35,7 @@ export class AddArticleComponent implements OnInit {
       dateSortieLivre: ["", Validators.required],
       nomAuteur: ["", Validators.required],
       imageUrlAuteur: ["", Validators.required],
+      image: [null, Validators.required],
       user: [null, Validators.required],
     });
   }
@@ -41,9 +46,14 @@ export class AddArticleComponent implements OnInit {
 
   onSubmit() {
 this.articleForm.value.user=this.tokenStorage.getUser();
+
 console.warn(this.articleForm.value);
 
-      this.articleService.addArticle(this.articleForm.value).subscribe(
+
+console.warn(this.articleForm.value.image);
+
+      this.articleService.addArticle(this.articleForm.value,this.articleForm.value.image).subscribe(
+        
         (data) => {
           let txt=data.message; 
           if (txt.includes("enregistré")) {
@@ -61,5 +71,24 @@ console.warn(this.articleForm.value);
       );
     }
  
+    onFileSelect(event: Event) {
+      let ch=(event.target as HTMLInputElement);
+      if (ch.files) {
+        const file = ch.files[0] ;
+console.log("worked");
+
+      this.articleForm.patchValue({ image: file });
+      const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (file && allowedMimeTypes.includes(file.type)) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.imageData = reader.result as string;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      }
+    }
+
   }
 

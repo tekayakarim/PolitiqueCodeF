@@ -89,9 +89,14 @@
             type="text"
             class="form-control mt-4"
             placeholder="image de l'auteur"
-            onfocus="(this.type='file')"
+          onfocus="this.type='file'"
             formControlName="imageUrlAuteur"
+            (change)="onFileSelect($event)"
           />
+          
+          <div class="imgClass"  *ngIf="imageData">
+            <img [src]="imageData" [alt]="articleForm.value.nomAuteur" />
+          </div>
           <button class="blob-btn mr-1 ml-1 mt-4" type="submit">
                 Ajouter <i class="fas fa-plus"></i>
                 <span class="blob-btn__inner">

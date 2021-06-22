@@ -46,7 +46,11 @@
   
   Le Prix Entreprise en démarrage a été décerné à Off The Grid, vélo de spinning générant de l’électricité."
     </p>
-  <p class="txt" *ngFor="let ar of Articles; let i = index"> frrrrrrse {{ar.textArticle}}</p>
+  <p class="txt" *ngFor="let ar of Articles; let i = index"> 
+    frrrrrrse {{ar.textArticle}}
+    <img [src]="ar.imageUrlAuteur" [alt]="ar.nomAuteur" />
+
+  </p>
   <p class="txt" *ngFor="let ar of Articles; let i = index"> frrrrrrse {{ar.imageUrlAuteur.data}}</p>
     </div>
   
