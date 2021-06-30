@@ -6,5 +6,11 @@
       <div class="title">Le Politique</div>
       <app-add-article></app-add-article>
       <div class="header">Votre <span style="font-weight:bold">dose d'intellect</span> chaque jour</div>
+      <div *ngFor="let ar of Articles; let i = index" > 
+        <div *ngIf="ar.typeArticle== 'économique' " class="txt" > 
+        <p  >Article : {{ar.textArticle}}</p>
+        <img [src]="ar.imageUrlAuteur" [alt]="ar.nomAuteur" /> <p  > nom livre :{{ar.nomLivre}}</p>
+        </div>
+      </div>
     </div>
 </div>

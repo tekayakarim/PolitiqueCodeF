@@ -14,7 +14,10 @@ Articles:any;
     ) { }
 
   ngOnInit(): void {
+  
     this.getAll();
+   
+    
   }
 
 getAll(){
